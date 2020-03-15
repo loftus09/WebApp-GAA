@@ -24,23 +24,7 @@
   <h4 class="logo">MillBridge GAA <img src="fyp crest.JPG" width="100" height="80" alt=""/></h4>
         </a>
 	  
-    <nav><header>
-      <label for="email">USERNAME:</label>
-      <input type="email" name="email" id="email"><br>
-      <label for="password">PASSWORD:</label>
-      <input type="password" name="password" id="password"><br>
-      <input type="submit">
-		<input type="button" value="Create Account"></header>
-		<ul>
-        <li><a href="Contact1.html" >CONTACT</a></li>
-        <li><a href="News1.html">COMMUNITY/NEWS</a></li>
-		<li><a href="Gallery1.html">GALLERY</a></li>
-		<li><a href="HISTORY.html">HISTORY</a></li>
-		<li><a href="Results.html">FIXTURES/RESULTS</a></li>
-		<li><a href="Index1.html">HOME</a></li>
-      </ul>
-     
-    </nav>
+  <jsp:include page="headerMenu.jsp" />
   </header>
   <!-- Hero Section -->
   <section class="fixtures" id="fixtures">

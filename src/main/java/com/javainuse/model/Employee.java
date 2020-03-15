@@ -1,5 +1,7 @@
 package com.javainuse.model;
 
+
+
 public class Employee {
 
 	private String empId;

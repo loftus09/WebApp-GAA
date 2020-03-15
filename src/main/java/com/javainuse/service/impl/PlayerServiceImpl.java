@@ -1,5 +1,6 @@
 package com.javainuse.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import com.javainuse.dao.EmployeeDao;
 import com.javainuse.dao.PlayerDao;
 import com.javainuse.model.Employee;
 import com.javainuse.model.Player;
+import com.javainuse.repositories.PlayerRepository;
 import com.javainuse.service.EmployeeService;
 import com.javainuse.service.PlayerService;
 
@@ -16,29 +18,31 @@ import com.javainuse.service.PlayerService;
 public class PlayerServiceImpl implements PlayerService {
 
 	@Autowired
-	PlayerDao playerDao;
+	PlayerRepository playerRepository;
 
 	@Override
-	public void insertPlayer(Employee emp) {
-		// TODO Auto-generated method stub
+	public void insertPlayer(Player p) {
 		
+		playerRepository.save(p);
 	}
 
 	@Override
 	public void insertPlayers(List<Player> players) {
-		// TODO Auto-generated method stub
 		
+		playerRepository.save(players);
 	}
 
 	@Override
 	public List<Player> getAllPlayers() {
 		// TODO Auto-generated method stub
-		return playerDao.getAllPlayers();
+		List<Player> players = new ArrayList<>();
+		playerRepository.findAll().forEach(players::add);
+		    return players;
 	}
 
 	@Override
 	public void getPlayerById(int playerid) {
-		// TODO Auto-generated method stub
+		playerRepository.findOne((long) playerid);
 		
 	}
 

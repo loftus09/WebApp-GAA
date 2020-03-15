@@ -1,10 +1,12 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page session="false"%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Managers Log</title>
-<link href="ManagerLog1CSS.css" rel="stylesheet" type="text/css">
+<link href="css/ManagerLog1CSS.css" rel="stylesheet" type="text/css">
 <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.--><script>var __adobewebfontsappname__="dreamweaver"</script><script src="http://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
 </head>
 
@@ -14,7 +16,7 @@
     <!--**************************************************************************
     Header starts here. It contains Logo and 3 navigation links. 
     ****************************************************************************-->
-    <div id="logo"> <img src="fyp crest.JPG" alt="sample logo" width="190" height="136"> </div>
+    <div id="logo"> <img src="css/finalcrest.jpg" alt="sample logo" width="190" height="136"> </div>
     <nav>
 		
       <h2 class="personal">Personal Trainer</h2> 
@@ -32,8 +34,12 @@
     Main Blog content starts here
     ****************************************************************************-->
       <h2 style="color: black"> Player List</h2>
+      	<a href="${pageContext.request.contextPath}/addNewEmployee">Add New
+        Employee</a>
 		<table>
 		<tbody>
+		
+	
     <tr>
 		<th>Name</th>
       <th>Age&nbsp; &nbsp; &nbsp; &nbsp;</th>
@@ -45,16 +51,17 @@
 	<c:forEach var="listValue" items="${players}">
 	
 	<tr>
-	<th>${listValue}</th>
-	<th>${listValue.name}</th>
-	<th>${listValue.age}</th>
-	<th>${listValue.phoneNumber}</th>
+	<td>${listValue.playerName}</td>
+	<td>${listValue.age}</td>
+	<td>${listValue.phoneNumber}</td>
 	</tr>
 	
 		</c:forEach>
 		
     
-    	</table></tbody>
+    	</table>
+    	
+    	</tbody>
 		
 		
 		<h2 style="color: black"> Weekly Training Report</h2>

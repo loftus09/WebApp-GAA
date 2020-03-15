@@ -15,28 +15,7 @@
     <h4 class="logo"><img src="images/finalcrest.png" width="125" height="92" alt=""/>
   </h4>
         </a>
-<nav>
-      <label for="email">USERNAME:</label>
-      <input type="email" name="email" id="email"><br>
-      <label for="password">PASSWORD:</label>
-      <input type="password" name="password" id="password"><br>
-	  
-      <button type="button" onclick="alert('Thank you')">Submit</button>
-	  
-      <button type="button" >Create Account</button>
- 
-
-                           
-	  
-      <ul>
-        <li><a href="Contact1.html" >CONTACT</a></li>
-        <li><a href="News1.html">COMMUNITY/NEWS</a></li>
-		<li><a href="Gallery1.html">GALLERY</a></li>
-		<li><a href="HISTORY.html">HISTORY</a></li>
-		<li><a href="Results.html">FIXTURES/RESULTS</a></li>
-		<li><a href="Index1.html">HOME</a></li>
-      </ul>
-    </nav>
+<jsp:include page="headerMenu.jsp" />
 	  <style>
 * {
   box-sizing: border-box;

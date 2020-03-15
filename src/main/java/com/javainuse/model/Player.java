@@ -1,11 +1,25 @@
 package com.javainuse.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Player {
-
-	private int playerId;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column
 	private String playerName;
+	
+	@Column
 	private int age;
+	
+	@Column
 	private String phoneNumber;
 
 	public int getAge() {
@@ -24,13 +38,10 @@ public class Player {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public int getPlayerId() {
-		return playerId;
+	public Long getPlayerId() {
+		return id;
 	}
 
-	public void setplayerId(int playerId) {
-		this.playerId = playerId;
-	}
 
 	public String getPlayerName() {
 		return playerName;
@@ -42,7 +53,7 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player [playerId=" + playerId + ", playerName=" + playerName + "]";
+		return "Player [playerId=" + id + ", playerName=" + playerName + "]";
 	}
 
 }

@@ -25,36 +25,11 @@ public class EmployeeController {
 	@Autowired
 	PlayerService playerService;
 	
-	@RequestMapping("/welcome")
+	@RequestMapping("/")
 	public ModelAndView firstPage() {
-		return new ModelAndView("welcome");
-	}
-	
-	@RequestMapping("/index")
-	public ModelAndView indexPage() {
 		return new ModelAndView("Index1");
 	}
 	
-	@RequestMapping("/contact")
-	public ModelAndView contactPage() {
-		return new ModelAndView("Contact1");
-	}
-	
-	@RequestMapping("/gallary")
-	public ModelAndView gallaryPage() {
-		return new ModelAndView("Gallary1");
-	}
-	
-	
-	@RequestMapping("/news")
-	public ModelAndView NewsPage() {
-		return new ModelAndView("News1");
-	}
-	
-	@RequestMapping("/results")
-	public ModelAndView ResultsPage() {
-		return new ModelAndView("Results");
-	}
 	
 	
 	@RequestMapping("/login")
@@ -84,13 +59,6 @@ public class EmployeeController {
 		model.addObject("employees", employees);
 		return model;
 	}
-	
-	@RequestMapping("/managerLog")
-	public ModelAndView getPlayers() {
-		List<Player> players = playerService.getAllPlayers();
-		ModelAndView model = new ModelAndView("managerLog");
-		model.addObject("players", players);
-		return model;
-	}
+
 	
 }
