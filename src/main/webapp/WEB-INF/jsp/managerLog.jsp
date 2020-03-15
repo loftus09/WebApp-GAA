@@ -34,8 +34,8 @@
     Main Blog content starts here
     ****************************************************************************-->
       <h2 style="color: black"> Player List</h2>
-      	<a href="${pageContext.request.contextPath}/addNewEmployee">Add New
-        Employee</a>
+      	<a href="${pageContext.request.contextPath}/addNewPlayer">Add New
+        Player</a>
 		<table>
 		<tbody>
 		
@@ -45,7 +45,7 @@
       <th>Age&nbsp; &nbsp; &nbsp; &nbsp;</th>
 		<th>Phone No.</th></tr>
 	
-    <h3 style="color: red;">Show All Employees</h3>
+    <h3 style="color: red;">Show All Players</h3>
 	<ul>
 	
 	<c:forEach var="listValue" items="${players}">
