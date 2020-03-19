@@ -34,7 +34,7 @@ public class PlayerServiceImpl implements PlayerService {
 
 	@Override
 	public List<Player> getAllPlayers() {
-		// TODO Auto-generated method stub
+	
 		List<Player> players = new ArrayList<>();
 		playerRepository.findAll().forEach(players::add);
 		    return players;

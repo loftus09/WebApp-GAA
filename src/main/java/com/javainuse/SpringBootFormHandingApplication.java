@@ -18,6 +18,8 @@ public class SpringBootFormHandingApplication {
 	public static void main(String[] args) {
 		
 		new File(FileUploadController.UPLOADED_FOLDER).mkdir();
+		new File(FileUploadController.NEWS_UPLOADED_FOLDER).mkdir();
+		
 		SpringApplication.run(SpringBootFormHandingApplication.class, args);
 	}
 }

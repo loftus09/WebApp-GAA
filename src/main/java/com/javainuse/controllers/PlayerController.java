@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.javainuse.model.Email;
 import com.javainuse.model.Employee;
 import com.javainuse.model.Player;
 import com.javainuse.service.EmployeeService;
@@ -38,7 +39,9 @@ public class PlayerController {
 	
 	@RequestMapping("/contact")
 	public ModelAndView contactPage() {
-		return new ModelAndView("Contact1");
+		
+		
+		return new ModelAndView("Contact1","mail",new Email());
 	}
 	
 	@RequestMapping("/gallery")
@@ -46,11 +49,7 @@ public class PlayerController {
 		return new ModelAndView("Gallery1");
 	}
 	
-	
-	@RequestMapping("/news")
-	public ModelAndView NewsPage() {
-		return new ModelAndView("News1");
-	}
+
 	
 	@RequestMapping("/results")
 	public ModelAndView ResultsPage() {
@@ -62,7 +61,7 @@ public class PlayerController {
 		return new ModelAndView("addPlayer", "player", new Player());
 	}
 
-	private boolean uploadFile(MultipartFile[] files)
+	public static boolean uploadFile(MultipartFile[] files)
 	{
 		 StringBuilder fileNames=new StringBuilder();
 		

@@ -1,5 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@page session="false"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -135,7 +136,37 @@ body {
 <section class="mainContent"> 
 
 
+
+<h3 style="color: red;">Contact via Email</h3>
+
+	<div id="sendEmail">
+		<form:form action="/sendEmail" method="post"
+			modelAttribute="mail" enctype="multipart/form-data">
+			
+			<p>
+				<label>Enter your email</label>
+				<form:input path="fromAddress" />
+			</p>
+			<p>
+				<label>Enter Subject</label>
+				<form:input path="subject" />
+			</p>
+			<p>
+				<label>Enter Message</label>
+				<form:input path="message" />
+			</p>
+			<input type="SUBMIT" value="Submit" />
+			
+		</form:form>
+		
+		
+	</div>
+
 <h2>Contact Details</h2>
+
+
+
+
 
 <div class="row">
   <div class="column" style="background-color:#aaa;">

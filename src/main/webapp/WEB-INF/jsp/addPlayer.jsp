@@ -25,12 +25,13 @@
 				<label>Enter Phone#</label>
 				<form:input path="phoneNumber" />
 			</p>
-			<input type="SUBMIT" value="Submit" />
 			
-			<p>
+				<p>
 			 <label>Select a file to upload</label>
            <input type="file" name="files" />
 			</p>
+			
+			<input type="SUBMIT" value="Submit" />
 			
 		</form:form>
 		
