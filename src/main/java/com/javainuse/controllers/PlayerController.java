@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,39 +27,18 @@ import com.javainuse.service.PlayerService;
 @Controller
 public class PlayerController {
 
-
-	
 	@Autowired
 	PlayerService playerService;
-
 	
-	@RequestMapping("/index")
-	public ModelAndView indexPage() {
-		return new ModelAndView("Index1");
+	@RequestMapping("portal/deletePlayer/{id}")
+	public String deleteProduct(@PathVariable(name = "id") int id) {
+		playerService.deletePlayer(playerService.getPlayerById(id));
+	    return "redirect:/portal/getPlayers";       
 	}
-	
-	@RequestMapping("/contact")
-	public ModelAndView contactPage() {
 		
-		
-		return new ModelAndView("Contact1","mail",new Email());
-	}
-	
-	@RequestMapping("/gallery")
-	public ModelAndView gallaryPage() {
-		return new ModelAndView("Gallery1");
-	}
-	
-
-	
-	@RequestMapping("/results")
-	public ModelAndView ResultsPage() {
-		return new ModelAndView("Results");
-	}
-	
-	@RequestMapping(value = "/addNewPlayer", method = RequestMethod.GET)
+	@RequestMapping(value = "portal/addNewPlayer", method = RequestMethod.GET)
 	public ModelAndView show() {
-		return new ModelAndView("addPlayer", "player", new Player());
+		return new ModelAndView("portal/addPlayer", "player", new Player());
 	}
 
 	public static boolean uploadFile(MultipartFile[] files)
@@ -81,14 +61,14 @@ public class PlayerController {
 		 return true;
 	}
 
-	@RequestMapping(value = "/addNewPlayer", method = RequestMethod.POST)
+	@RequestMapping(value = "portal/addNewPlayer", method = RequestMethod.POST)
 	public ModelAndView processRequest(@ModelAttribute("player") Player player,@RequestParam("files") MultipartFile[] files,
     		
             RedirectAttributes redirectAttributes ) {
-		 ModelAndView model = new ModelAndView("uploadStatus");
+		 ModelAndView model = new ModelAndView("portal/uploadStatus");
 		 if (files.length==0) {
 	            
-	             model = new ModelAndView("uploadStatus");
+	             model = new ModelAndView("portal/uploadStatus");
 	            model.addObject("msg", "Please select a file to upload");
 	            return model;
 	        }
@@ -101,7 +81,7 @@ public class PlayerController {
 		
 		
 		
-		 model = new ModelAndView("managerLog");
+		 model = new ModelAndView("portal/managerLog");
 		model.addObject("players", players);
 		 model.addObject("msg","Sucessfully uploaded");
 		return model;
@@ -113,21 +93,21 @@ public class PlayerController {
 		}
 	}
 
-	@RequestMapping("/getPlayers")
+	@RequestMapping("portal/getPlayers")
 	public ModelAndView getPlayers() {
 		
 		List<Player> players = playerService.getAllPlayers();
-		ModelAndView model = new ModelAndView("getPlayers");
+		ModelAndView model = new ModelAndView("portal/getPlayers");
 		model.addObject("players", players);
 		return model;
 		
 	}
 	
-	@RequestMapping("/managerLog")
+	@RequestMapping("portal/managerLog")
 	public ModelAndView managerLog() {
 		List<Player> players = playerService.getAllPlayers();
 		System.out.println(players);
-		ModelAndView model = new ModelAndView("managerLog");
+		ModelAndView model = new ModelAndView("portal/managerLog");
 		model.addObject("players", players);
 		return model;
 	}

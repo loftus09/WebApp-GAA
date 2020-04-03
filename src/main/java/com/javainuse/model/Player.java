@@ -51,6 +51,18 @@ public class Player {
 		this.playerName = playerName;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
+
 	@Override
 	public String toString() {
 		return "Player [playerId=" + id + ", playerName=" + playerName + "]";

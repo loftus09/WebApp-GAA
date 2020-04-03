@@ -23,7 +23,7 @@ public class FileUploadController {
 	public static String UPLOADED_FOLDER = "src/main/webapp/images/uploads/";
 	public static String NEWS_UPLOADED_FOLDER ="src/main/webapp/images/uploads/news/";
 	
-	 @PostMapping("/upload") // //new annotation since 4.3
+	 @PostMapping("portal/upload") // //new annotation since 4.3
 	    public String singleFileUpload(Model model, @RequestParam("files") MultipartFile[] files,
 	    		
                 RedirectAttributes redirectAttributes ) {
@@ -31,7 +31,7 @@ public class FileUploadController {
 		 StringBuilder fileNames=new StringBuilder();
 		 if (files.length==0) {
 	            redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-	            return "redirect:uploadStatus";
+	            return "redirect:/portal/uploadStatus";
 	        }
 		 try
 		 {
@@ -47,11 +47,11 @@ public class FileUploadController {
 	        }
 
 		 model.addAttribute("msg","Sucessfully uploaded"+fileNames.toString());
-		return "uploadStatus";
+		return "portal/uploadStatus";
 		 }
 
-	    @GetMapping("/uploadStatus")
+	    @GetMapping("portal/uploadStatus")
 	    public String uploadStatus() {
-	        return "uploadStatus";
+	        return "portal/uploadStatus";
 	    }
 }

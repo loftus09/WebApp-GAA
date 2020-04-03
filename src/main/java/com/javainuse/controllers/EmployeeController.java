@@ -21,21 +21,6 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 
-	
-	@Autowired
-	PlayerService playerService;
-	
-	@RequestMapping("/")
-	public ModelAndView firstPage() {
-		return new ModelAndView("Index1");
-	}
-	
-	
-	
-	@RequestMapping("/login")
-	public ModelAndView loginPage() {
-		return new ModelAndView("welcome");
-	}
 
 	@RequestMapping(value = "/addNewEmployee", method = RequestMethod.GET)
 	public ModelAndView show() {

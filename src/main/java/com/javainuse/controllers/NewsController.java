@@ -33,37 +33,33 @@ public class NewsController {
 
 	@Autowired
 	ServletContext context;
-	
-	
+		
 	@Autowired
 	NewsService newsService;
 
-	
 	@RequestMapping("/news")
 	public ModelAndView NewsPage() {
 		
 		List<News> news= newsService.getAllNews();
-		ModelAndView model = new ModelAndView("News1");
+		ModelAndView model = new ModelAndView("home/News1");
 		model.addObject("news", news);
 		return model;
 	
 	}
 	
-	
-	@RequestMapping(value = "/addNewNews", method = RequestMethod.GET)
+	@RequestMapping(value = "portal/addNewNews", method = RequestMethod.GET)
 	public ModelAndView show() {
-		return new ModelAndView("addNews", "news", new News());
+		return new ModelAndView("portal/addNews", "news", new News());
 	}
 
-
-	@RequestMapping(value = "/addNewNews", method = RequestMethod.POST)
+	@RequestMapping(value = "portal/addNewNews", method = RequestMethod.POST)
 	public ModelAndView processRequest(@ModelAttribute("news") News news,@RequestParam("files") MultipartFile file,
     		
             RedirectAttributes redirectAttributes ) throws IOException {
-		 ModelAndView model = new ModelAndView("uploadStatus");
+		 ModelAndView model = new ModelAndView("portal/uploadStatus");
 		 if (file.isEmpty()) {
 	            
-	             model = new ModelAndView("uploadStatus");
+	             model = new ModelAndView("portal/uploadStatus");
 	            model.addObject("msg", "Please select a file to upload");
 	            return model;
 	        }
@@ -77,14 +73,10 @@ public class NewsController {
 		  byte[] bytes = file.getBytes();
 		    Files.write(path, bytes);
 		
-		 model = new ModelAndView("uploadStatus");
+		 model = new ModelAndView("portal/uploadStatus");
 	
 		 model.addObject("msg","News Sucessfully uploaded");
 		return model;
 		
 	}
-
-
-
-	
 }

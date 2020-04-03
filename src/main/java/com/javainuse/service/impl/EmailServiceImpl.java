@@ -20,7 +20,7 @@ public class EmailServiceImpl {
 
         mailMessage.setTo("sarwarazhar55@gmail.com");
         mailMessage.setSubject(mail.getSubject());
-        mailMessage.setText(mail.getMessage());
+        mailMessage.setText("Email From: "+mail.getFromAddress()+"\n"+"Message: "+mail.getMessage());
         
         mailMessage.setFrom(mail.getFromAddress());
 

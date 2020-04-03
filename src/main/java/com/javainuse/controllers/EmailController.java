@@ -35,11 +35,11 @@ public class EmailController {
 	public ModelAndView processRequest(@ModelAttribute("mail") Email mail,
 
 			RedirectAttributes redirectAttributes ) {
-		ModelAndView model = new ModelAndView("uploadStatus");
-
+		ModelAndView model = new ModelAndView("home/uploadStatus");
+		
 		emailService.sendMail(mail);
 
-		model = new ModelAndView("uploadStatus");
+		model = new ModelAndView("home/uploadStatus");
 		model.addObject("msg","Email Send Sucessfully ");
 		return model;
 
