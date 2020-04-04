@@ -18,7 +18,7 @@ public class EmailServiceImpl {
 
          SimpleMailMessage mailMessage = new SimpleMailMessage();
 
-        mailMessage.setTo("sarwarazhar55@gmail.com");
+        mailMessage.setTo("loftus09@gmail.com");
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText("Email From: "+mail.getFromAddress()+"\n"+"Message: "+mail.getMessage());
         
