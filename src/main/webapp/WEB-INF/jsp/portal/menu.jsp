@@ -2,11 +2,14 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <div style="border: 1px solid #ccc; padding: 5px; margin-bottom: 20px;">
 
-	<a href="${pageContext.request.contextPath}/portal/welcome">Home</a> | &nbsp;
 
 <table border="1">
 
 <tr>
+<td>
+	<a href="${pageContext.request.contextPath}/portal/welcome">Home</a>
+
+</td>
 
 <sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')">
 <td>
@@ -22,7 +25,7 @@
         Player</a>
 </td>
 </sec:authorize>
-<sec:authorize access="hasRole('ROLE_ADMIN')">
+<sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
 <td>
      <a href="${pageContext.request.contextPath}/portal/getPlayers">Get
         All Players</a>
@@ -36,10 +39,19 @@
 </td>
 </sec:authorize>
 
+<sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
+<td>
+      <a href="${pageContext.request.contextPath}/portal/playerLog">Player
+        Logs</a>
+</td>
+</sec:authorize>
+
+<td>
 <sec:authorize access="hasRole('ROLE_USER')">
    <a href="${pageContext.request.contextPath}/portal/addResult">Add
         Result</a>
 </sec:authorize>
+</td>
 <td>
 <a href="${contextPath}/portal/logout">Logout</a>
 </td>

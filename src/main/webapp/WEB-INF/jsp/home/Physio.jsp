@@ -11,7 +11,10 @@
 <body>
 
 <div class="container"> 
-  
+   <header> <a href="">
+    <h4 class="logo"><img src="images/finalcrest.png" width="125" height="92" alt=""/>
+  </h4>
+        </a>
   <jsp:include page="headerMenu.jsp" />
 	 <style>
 		  
@@ -127,8 +130,6 @@ body {
 	
 </head>
 
-	
-  <div class="profilePhoto"><img src="images/physio.png" alt="sample"><img src="images/details.png" alt="sample" height="232"></div>
 	
 	<div class="profilePhoto"></div>
 	

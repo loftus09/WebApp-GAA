@@ -10,8 +10,16 @@
 	<jsp:include page="menu.jsp" />
 	      
 	<h3 style="color: red;">Show All Players</h3>
-	<ul>
-		<c:forEach var="listValue" items="${players}">
+	
+	
+	
+		<table>
+		<tbody>
+		<th>Name</th>
+      <th>Age&nbsp; &nbsp; &nbsp; &nbsp;</th>
+		<th>Phone No.</th></tr>
+
+	<c:forEach var="listValue" items="${players}">
 
 			<tr>
 				<td>${listValue.playerName}</td>
@@ -27,6 +35,11 @@
 			</tr>
 
 		</c:forEach>
-	</ul>
+
+</tbody>
+		</table>
+	
+	
+
 </body>
 </html>

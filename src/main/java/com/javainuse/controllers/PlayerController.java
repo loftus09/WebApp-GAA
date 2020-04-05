@@ -111,5 +111,13 @@ public class PlayerController {
 		model.addObject("players", players);
 		return model;
 	}
-	
+
+	@RequestMapping("portal/playerLog")
+	public ModelAndView playerLog() {
+		List<Player> players = playerService.getAllPlayers();
+		System.out.println(players);
+		ModelAndView model = new ModelAndView("portal/playerLog");
+		model.addObject("players", players);
+		return model;
+	}
 }

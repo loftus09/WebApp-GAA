@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Manager Profile</title>
+<title>Player Profile</title>
 <link href="${contextPath}/css/simpleGridTemplate.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -21,20 +21,12 @@
   </h4>
         </a>
 <nav>
-      <h1 class="personal">Manager Profile</h1> 
-      	
-	
+      <h2 class="personal">My Personal Trainer</h2> 
  
-
-                           
-	  
       
     </nav>
 	  <style>
-		    
-}
-
-ul, li {
+		  ul, li {
   list-style: none;
   display: inline;
 	align: center;
@@ -174,7 +166,7 @@ body {
 	    <div id="content">
 <div class="notOnDesktop"> 
  
-		  <div class="fakeimg" style="height:60px;"><li><a href="${contextPath}/portal/logout" title="Link"><button>LOGOUT</button></a></li></div><br>
+	  <div class="fakeimg" style="height:60px;"><li><a href="${contextPath}/portal/logout" title="Link"><button>LOGOUT</button></a></li></div><br>
  
     </div>
     <section id="mainContent"> 
@@ -191,66 +183,40 @@ body {
     <div class="fakeimg" style="height:60px;"><li><a href="${pageContext.request.contextPath}/results" title="Link"><button>RESULTS</button></a></li></div><br>
     <div class="fakeimg" style="height:60px;"><li><a href="${pageContext.request.contextPath}/fixtures" title="Link"><button>FIXTURES</button></a></li></div><br>
 	  <div class="fakeimg" style="height:60px;"><li><a href="${pageContext.request.contextPath}/Physio" title="Link"><button>PHYSIO</button></a></li></div><br>
-<tr>
-		<h2 style="color: black"> Player List</h2>
-		<table>
-		<tbody>
-		<th>Name</th>
-      <th>Age&nbsp; &nbsp; &nbsp; &nbsp;</th>
-		<th>Phone No.</th></tr>
-
-	<c:forEach var="listValue" items="${players}">
-
-			<tr>
-				<td>${listValue.playerName}</td>
-				<td>${listValue.age}</td>
-				<td>${listValue.phoneNumber}</td>
-				<sec:authorize access="hasRole('ROLE_ADMIN')">
-					<td><a
-						href="${pageContext.request.contextPath}/portal/deletePlayer/${listValue.id}">delete
-							</a></td>
-				</sec:authorize>
-
-
-			</tr>
-
-		</c:forEach>
-
-
-		</table></tbody> </p>
-    <br>
+	  
 	  
   </div>
   <div class="main">
-    <h2>Information from last Monday's Gym session</h2>
-    <h5> Jan 10, 2020</h5>
+    <h2>Information from last Friday's session</h2>
+    <h5> Jan 7, 2020</h5>
     <ul>
     <img src="${contextPath}/images/trainer.jfif"  alt="Cinque Terre" width="150" height="100">
     <img src="${contextPath}/images/pitch.png"	alt="Cinque Terre" width="150" height="100">
     <img src="${contextPath}/images/physio.png"	alt="Cinque Terre" width="150" height="100">
 	  </ul>
-    <h5>Current Mens Senior Panel Analysis</h5>
-	  <p> The first training session back after the New Year was what was to be expected. Some lads kept themselves in good shape over the break, but some definitely did not. The next two weeks training will have to be mainly cardio exercises to get the lads back in shape.  </p>
+    <p>Hi Alan</p>
+    <p>Below are the stats from last weeks training session. All going well so far, you kept yourself in good nick over the Christmas. Just a few notes, you tapered off towards the end of the training match, so we'll have to look at that. You were active for 85% of your time on the field and the overall attendance was 22. </p>
+    <br>
   <div class="about-section-col">
               <div class="skills">
                 <div class="skill">
                   <div class="title">Duration</div>
                   <div class="progress">
-                    <div class="progress-bar p1"><span>120 Minutes</span></div>
+                    <div class="progress-bar p1"><span>65 Minutes</span></div>
                   </div>
                 </div>
 
                 <div class="skill">
                   <div class="title">Attendance</div>
                   <div class="progress">
-                    <div class="progress-bar p2"><span>30</span></div>
+                    <div class="progress-bar p2"><span>22</span></div>
                   </div>
                 </div>
 
                 <div class="skill">
-                  <div class="title">Training Performance Average</div>
+                  <div class="title">Training Performance</div>
                   <div class="progress">
-                    <div class="progress-bar p3"><span>95%</span></div>
+                    <div class="progress-bar p3"><span>85%</span></div>
                   </div>
 
 <div class="footer">

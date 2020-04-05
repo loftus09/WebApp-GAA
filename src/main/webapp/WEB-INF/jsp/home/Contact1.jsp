@@ -17,8 +17,12 @@
     <h4 class="logo">MillBridge GAA <img src="images/finalcrest.png" width="125" height="92" alt=""/>
     </h4>
         </a>
-  <jsp:include page="headerMenu.jsp" />
+     <jsp:include page="headerMenu.jsp" />
   <style>
+	  	.column {
+  column-count: 4;
+  column-gap: 40px;
+}
 * {
   box-sizing: border-box;
 }
@@ -115,17 +119,26 @@ body {
     float: none;
     width: 100%;
   }
+
 }
 </style>
 	  </head>
 	<body>
 
-<jsp:include page="SubheaderMenu.jsp" />
+<div class="header">
+  <h1></h1>
+  <p></p>
+</div>
+
+<div class="navbar">
+  <a href="Seniormensteam.html">Senior Mens Team</a>
+  <a href="SeniorLadiesteam.html">Senior Ladies Team</a>
+  <a href="U21team.html">U21 Team</a>
+  <a href="Physio.html">Physio</a>
+</div>
 		
 
 <section class="mainContent"> 
-
-
 
 <h3 style="color: red;">Contact via Email</h3>
 
@@ -153,19 +166,16 @@ body {
 	</div>
 
 <h2>Contact Details</h2>
-
-
-
-
+	<hr>
 
 <div class="row">
   <div class="column" style="background-color:#aaa;">
-    <h2>Administrator</h2>
+    <h2>Administrator                                          </h2>
     <p><span>Name :</span> John Burke</p>
       <p><span>Email :</span> johnburke@gmail.com</p>
       <p><span>Website :</span> johnburke.com</p>
       <p><span>Phone :</span> (087) 1324388</p>
-      <p><span>Address :</span> The Glens, Co.Sligo</p>
+      <p><span>Address :</span> The Glens, Burch Road, Co.Sligo</p>
 	</div>
  
   <div class="column" style="background-color:#bbb;">
@@ -174,19 +184,27 @@ body {
 		<p><span>Email :</span> patryan@gmail.com</p>
       <p><span>Phone :</span> (085) 8791344</p>
       <p><span>Address :</span> The Glens, Burch Road, Co.Sligo</p>
+	  
+	</div>
+	<div class="column" style="background-color:#aaa;">
+    <h2 class="tag">Senior Ladies, Manager</h2>
+	  <p><span>Name :</span> Sinead Welsh</p>
+		<p><span>Email :</span> sinwelsh@gmail.com</p>
+      <p><span>Phone :</span> (083) 8451255</p>
+      <p><span>Address :</span> The Hawthorns, Limeston Co.Sligo</p>
 	</div>
 
 	
-		<div class="column" style="background-color: #aaa;">
+		<div class="column" style="background-color: #bbb;">
     <h2 class="tag">U21, Manager</h2>
 		<p><span>Name :</span> Brian Flynn</p>
        <p><span>Email :</span> brianflynn@gmail.com</p>
    
       <p><span>Phone :</span> (087) 7891754</p>
-	<p><span>Address :</span> Hookstown, Co.Sligo </p>
+	<p><span>Address :</span> 10,The Glens, Burch Road,Co.Sligo </p>
 	</div>
 		
-	<div class="column" style="background-color:#bbb;">
+	<div class="column" style="background-color:#aaa;">
     <h2 class="tag">Physio</h2>
 	  <p><span>Name :</span> Clare Hill</p>
 		<p><span>Email :</span> clarehill@gmail.com</p>
@@ -195,49 +213,51 @@ body {
       <p><span>Address :</span> The Glens, Burch Road, Co.Sligo</p>
 		
 			</div>
-	<div class="column" style="background-color: #aaa;">
+	<div class="column" style="background-color: #bbb;">
     <h2 class="tag">Club Secretary</h2>
 		<p><span>Name :</span> Vincent Hogan</p>
        <p><span>Email :</span> vhogan@gmail.com</p>
    
       <p><span>Phone :</span> (089) 7875932</p>
-	<p><span>Address :</span> Lynch Casle, Co.Sligo </p>
+	<p><span>Address :</span> Burchway, Lynch Castle, Co.Sligo </p>
 	</div>
-	<div class="column" style="background-color: #bbb;">
+	<div class="column" style="background-color: #aaa;">
     <h2 class="tag">Club President</h2>
 		<p><span>Name :</span> Mary Butler</p>
        <p><span>Email :</span> Marybutler@gmail.com</p>
    
       <p><span>Phone :</span> (087) 7066998</p>
-	<p><span>Address :</span> Hookstown, Co.Sligo </p>
+	<p><span>Address :</span> 15,Hookstown, The Glens,Co.Sligo </p>
 	</div>
 	
+	<div class="column" style="background-color: #bbb;">
+    <h2 class="tag">Club Vice President</h2>
+		<p><span>Name :</span> Pat Quinn</p>
+       <p><span>Email :</span> pquinn@gmail.com</p>
+   
+      <p><span>Phone :</span> (086) 7215772</p>
+	<p><span>Address :</span> Hook road, Burch drive, Co.Sligo </p>
+	</div>
+	<div class="column" style="background-color: #aaa;">
+    <h2 class="tag">Club Kit Man</h2>
+		<p><span>Name :</span> Jarlet Hopkins</p>
+       <p><span>Email :</span> jhop@gmail.com</p>
+   
+      <p><span>Phone :</span> (087) 9856332</p>
+	<p><span>Address :</span> Finn road, Hazelway, Co.Sligo </p>
+	</div>
 	</div>
 		
 		  
   
 	
 
-<footer>
-  <hr>
-  <p class="footerDisclaimer">&nbsp;</p>
-<span class="container">&copy; - <strong>Millbridge Gaa 2020</strong></span></footer>
-	
-	
-  
-  
-  <footer id="contact">
-    <p class="hero_header"></p>
-    <div class="button">EMAIL ADMIN </div>
-  </footer>
- 
-  <div class="Millbridge">&copy;2020 - <strong></strong></div>
+<div class="footer">
+  <h2>©Millbridgegaa-2020</h2>
+	<hr>
 </div>
 
 </body>
-</html>
-
-></body>
 </html>
 
 

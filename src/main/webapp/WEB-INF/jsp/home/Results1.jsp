@@ -13,6 +13,10 @@
 
 <div class="container"> 
   
+   <header> <a href="">
+    <h4 class="logo"><img src="images/finalcrest.png" width="125" height="92" alt=""/>
+  </h4>
+        </a>
 
    <jsp:include page="headerMenu.jsp" />
 	 
